@@ -4,15 +4,15 @@ import { db } from "./Firebase/firebase";
 import { useNavigate } from "react-router-dom";
 
 const Product = () => {
-  const [productData, setProductData] = useState([]);
-  const navigate = useNavigate();
+  const [productData, setProductData] = useState([])
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, "users"));
-        const data = querySnapshot.docs.map(doc => doc.data());
-        setProductData(data);
+        const querySnapshot = await getDocs(collection(db, "users"))
+        const data = querySnapshot.docs.map(doc => doc.data())
+        setProductData(data)
       } catch (error) {
         console.error("Error fetching products:", error);
       }
