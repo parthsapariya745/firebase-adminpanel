@@ -14,7 +14,7 @@ const Product = () => {
         const data = querySnapshot.docs.map(doc => doc.data())
         setProductData(data)
       } catch (error) {
-        console.error("Error fetching products:", error);
+        console.log("Error fetching products:", error);
       }
     };
     fetchData();
