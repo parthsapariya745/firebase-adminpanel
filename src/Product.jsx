@@ -21,8 +21,8 @@ const Product = () => {
   }, []);
 
   return (
-    <div>
-      <button onClick={() => navigate("/")}>Back to Form</button>
+    <div className="showProduct">
+      <button className="backhome" onClick={() => navigate("/")}>Back to Form</button>
       <h1>All Products</h1>
       <div className="product-container">
         {productData.map((e, i) => (
