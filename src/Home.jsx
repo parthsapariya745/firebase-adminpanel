@@ -38,34 +38,36 @@ const Home = () => {
         navigate("/Product");
     };
     return (
-        <div className="product-form">
-            <h1>Product Details</h1>
-            <input
-                type="text"
-                value={productURL}
-                onChange={(e) => setProductURL(e.target.value)}
-                placeholder="Enter Product URL"
-            />
-            <input
-                type="text"
-                value={productName}
-                onChange={(e) => setProductName(e.target.value)}
-                placeholder="Enter Product Name"
-            />
-            <input
-                type="number"
-                value={productPrice}
-                onChange={(e) => setProductPrice(e.target.value)}
-                placeholder="Enter Product Price"
-            />
-            <input
-                type="text"
-                value={productDes}
-                onChange={(e) => setProductDes(e.target.value)}
-                placeholder="Enter Product Description"
-            />
-            <button className="add" onClick={handleAdd}>Add Product</button>
-            <button className="get" onClick={handleGet}>Get data</button>
+        <div class="product-box">
+            <div className="product-form">
+                <h1>Product Details</h1>
+                <input
+                    type="text"
+                    value={productURL}
+                    onChange={(e) => setProductURL(e.target.value)}
+                    placeholder="Enter Product URL"
+                />
+                <input
+                    type="text"
+                    value={productName}
+                    onChange={(e) => setProductName(e.target.value)}
+                    placeholder="Enter Product Name"
+                />
+                <input
+                    type="number"
+                    value={productPrice}
+                    onChange={(e) => setProductPrice(e.target.value)}
+                    placeholder="Enter Product Price"
+                />
+                <input
+                    type="text"
+                    value={productDes}
+                    onChange={(e) => setProductDes(e.target.value)}
+                    placeholder="Enter Product Description"
+                />
+                <button className="add" onClick={handleAdd}>Add Product</button>
+                <button className="get" onClick={handleGet}>Get data</button>
+            </div>
         </div>
     )
 }

@@ -21,18 +21,20 @@ const Product = () => {
   }, []);
 
   return (
-    <div className="showProduct">
-      <button className="backhome" onClick={() => navigate("/")}>Back to Form</button>
-      <h1>All Products</h1>
-      <div className="product-container">
-        {productData.map((e, i) => (
-          <div key={i} className="product-card">
-            <img width={180} src={e.url} alt={e.name} />
-            <h3>{e.name}</h3>
-            <p>Price: {e.price}</p>
-            <p>{e.des}</p>
-          </div>
-        ))}
+    <div class="product-box2">
+      <div className="showProduct">
+        <button className="backhome" onClick={() => navigate("/Home")}>Back to Form</button>
+        <h1>All Products</h1>
+        <div className="product-container">
+          {productData.map((e, i) => (
+            <div key={i} className="product-card">
+              <img width={180} src={e.url} alt={e.name} />
+              <h3>{e.name}</h3>
+              <p>Price: {e.price}</p>
+              <p>{e.des}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
