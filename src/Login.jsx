@@ -43,8 +43,8 @@ const Login = () => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
-
         console.log(token, user);
+  
         alert("SignIn with Google Successfull")
         navigate('/Home')
       }).catch((error) => {
@@ -52,7 +52,7 @@ const Login = () => {
         const errorMessage = error.message;
         const email = error.customData.email;
         const credential = GoogleAuthProvider.credentialFromError(error);
-
+  
         console.log(errorCode, errorMessage, email, credential);
       });
   }
