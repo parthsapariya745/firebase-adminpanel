@@ -70,7 +70,7 @@ const Signup = () => {
         <p class="meta">
           Already have an account?
           <Link to="/Login" class="signin-link">
-            Login Now
+            SignIn Now
           </Link>
         </p>
       </form>

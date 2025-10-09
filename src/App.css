@@ -88,6 +88,69 @@ body {
 .product-form .get:hover {
   background-color: #45a049;  
 }
+.google-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(16,24,40,0.08);
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(16,24,40,0.06);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  color: #111827;
+  transition: transform .08s ease, box-shadow .12s ease;
+  user-select: none;
+}
+.google-btn .g-icon{
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.google-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(16,24,40,0.12);
+}
+.google-btn:active{
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(16,24,40,0.08);
+}
+.google-btn:focus{
+  outline: 3px solid rgba(66,133,244,0.18);
+  outline-offset: 3px;
+}
+.or-sep{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+/* horizontal lines created with pseudo-elements */
+.or-sep::before,
+.or-sep::after{
+  content: "";
+  flex: 1 1 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.06), rgba(0,0,0,0.04));
+  border-radius: 1px;
+}
+
+/* OR text styling */
+.or-text{
+  padding: 6px 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(250,250,250,0.9));
+  border-radius: 999px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset;
+}
 /* 🌍 Page Container */
 .product-box2 {
   width: 100vw;
@@ -316,7 +379,7 @@ body {
 }
 
 /* ⚡ Button */
-.auth.box button {
+.auth.box .cta {
   background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
   color: #fff;
   border: none;
@@ -331,12 +394,12 @@ body {
   font-size: 18px;
 }
 
-.auth.box button:hover {
+.auth.box .cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(14,165,233,0.35);
 }
 
-.auth.box button::after {
+.auth.box .cta::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -350,7 +413,7 @@ body {
   transition: transform 0.6s ease;
 }
 
-.auth.box button:hover::after {
+.auth.box .cta:hover::after {
   transform: translateX(100%);
 }
 
@@ -400,7 +463,10 @@ body {
     font-size: 1.6rem;
   }
 }
-
+@media (max-width: 420px){
+  .google-btn{ padding: 10px; font-size: 14px; border-radius: 9px; }
+  .or-text{ padding: 4px 8px; font-size: 12px; }
+}
 @media (max-width: 350px) {
   .product-form {
     padding: 25px 20px;
