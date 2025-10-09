@@ -1,14 +1,12 @@
-import { signInWithEmailAndPassword, GoogleAuthProvider, getRedirectResult, signInWithRedirect } from "firebase/auth";
-import { auth } from "./Firebase/firebase";
-import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from "./Firebase/firebase";
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, } from "firebase/auth";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  let navigate = useNavigate();
-  const provider = new GoogleAuthProvider();
+  const navigate = useNavigate();
 
   let handleLogin = (e) => {
     e.preventDefault();
@@ -36,23 +34,23 @@ const Login = () => {
   };
 
   let handleSignInWithGoogle = () => {
-    signInWithRedirect(auth, provider);
+    const provider = new GoogleAuthProvider();
 
-    getRedirectResult(auth)
+    signInWithPopup(auth, provider)
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
         console.log(token, user);
-  
-        alert("SignIn with Google Successfull")
-        navigate('/Home')
+
+        alert("Sign Up with Google Successfull")
+        navigate("/Home")
       }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         const email = error.customData.email;
         const credential = GoogleAuthProvider.credentialFromError(error);
-  
+
         console.log(errorCode, errorMessage, email, credential);
       });
   }
