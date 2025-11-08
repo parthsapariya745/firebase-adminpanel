@@ -43,8 +43,9 @@ const Login = () => {
         const user = result.user;
         console.log(token, user);
 
+        window.alert("Sign Up with Google Successful");
+        
         setTimeout(() => {
-          window.alert("Sign Up with Google Successful");
           navigate("/Home")
         }, 500)
       }).catch((error) => {
