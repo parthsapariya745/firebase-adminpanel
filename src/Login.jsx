@@ -43,11 +43,8 @@ const Login = () => {
         const user = result.user;
         console.log(token, user);
 
-        alert("Sign Up with Google Successfull")
-
-        setTimeout(() => {
-          navigate("/Home");
-        }, 500);
+        window.alert("Sign Up with Google Successful");
+        navigate("/Home")
         
       }).catch((error) => {
         const errorCode = error.code;
