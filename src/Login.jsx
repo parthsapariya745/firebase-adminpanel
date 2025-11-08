@@ -44,7 +44,11 @@ const Login = () => {
         console.log(token, user);
 
         alert("Sign Up with Google Successfull")
-        navigate("/Home")
+
+        setTimeout(() => {
+          navigate("/Home");
+        }, 500);
+        
       }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
